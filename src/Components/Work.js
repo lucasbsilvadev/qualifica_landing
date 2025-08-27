@@ -1,44 +1,62 @@
 import React from "react";
-import PickMeals from "../Assets/pick-meals-image.png";
-import ChooseMeals from "../Assets/choose-image.png";
-import DeliveryMeals from "../Assets/delivery-image.png";
+import AnamneseIcon from "../Assets/form.png";
+import AvaliacaoIcon from "../Assets/body_exam.png";
+import PlanejamentoIcon from "../Assets/training_routine.png";
+import AcompanhamentoIcon from "../Assets/followup.png";
+import SuporteIcon from "../Assets/support.png";
+import VideoIcon from "../Assets/videocall.png";
 
 const Work = () => {
-  const workInfoData = [
+  const stepsData = [
     {
-      image: PickMeals,
-      title: "Pick Meals",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et sagittis duis elementum interdum facilisi bibendum.",
+      image: AnamneseIcon,
+      title: "Anamnese",
+      text: "Questionário detalhado + fotos iniciais para entender seu ponto de partida.",
     },
     {
-      image: ChooseMeals,
-      title: "Choose How Often",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et ",
+      image: AvaliacaoIcon,
+      title: "Avaliação completa",
+      text: "Análise física e funcional para identificar necessidades e limitações.",
     },
     {
-      image: DeliveryMeals,
-      title: "Fast Deliveries",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et lorem ipsum",
+      image: PlanejamentoIcon,
+      title: "Planejamento personalizado",
+      text: "Treino e dieta feitos sob medida para os seus objetivos.",
+    },
+    {
+      image: AcompanhamentoIcon,
+      title: "Acompanhamento constante",
+      text: "Feedback e ajustes semanais para garantir evolução contínua.",
+    },
+    {
+      image: SuporteIcon,
+      title: "Suporte direto",
+      text: "Contato via WhatsApp para alinhamentos",
+    },
+    {
+      image: VideoIcon,
+      title: "VideoConferência",
+      text: "Videconferência periódica com alunos ",
     },
   ];
+
   return (
     <div className="work-section-wrapper">
       <div className="work-section-top">
-        <p className="primary-subheading">Work</p>
-        <h1 className="primary-heading">How It Works</h1>
+        <p className="primary-subheading">Consultoria</p>
+        <h1 className="primary-heading">Como funciona a consultoria</h1>
         <p className="primary-text">
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+          Passo a passo simples e objetivo para alcançar seus resultados com acompanhamento profissional.
         </p>
       </div>
       <div className="work-section-bottom">
-        {workInfoData.map((data) => (
-          <div className="work-section-info" key={data.title}>
+        {stepsData.map((step) => (
+          <div className="work-section-info" key={step.title}>
             <div className="info-boxes-img-container">
-              <img src={data.image} alt="" />
+              <img src={step.image} alt={step.title} />
             </div>
-            <h2>{data.title}</h2>
-            <p>{data.text}</p>
+            <h2>{step.title}</h2>
+            <p>{step.text}</p>
           </div>
         ))}
       </div>
