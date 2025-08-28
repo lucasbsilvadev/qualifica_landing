@@ -15,7 +15,7 @@ const Home = () => {
       setCounters(prevCounters => 
         prevCounters.map(counter => {
           if (counter.value < counter.target) {
-            const increment = Math.ceil(counter.target / 25); // Animação mais suave
+            const increment = Math.ceil(counter.target / 25);
             return { 
               ...counter, 
               value: Math.min(counter.value + increment, counter.target) 
@@ -29,8 +29,16 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleSaibaMaisClick = () => {
+    // Leva para a seção de consultoria
+    const element = document.getElementById("work");
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="home-container">
+    <div className="home-container" id="home">
       <Navbar />
       <div className="home-banner-container">
         <div className="home-text-section">
@@ -42,7 +50,7 @@ const Home = () => {
             Consultoria esportiva de alto nível com Luís Sabóia, atleta e
             treinador com acompanhamento que vai do iniciante ao fisiculturista.
           </p>
-          <button className="secondary-button">
+          <button className="secondary-button" onClick={handleSaibaMaisClick}>
             Saiba mais <FiArrowRight />
           </button>
 

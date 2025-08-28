@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-// import BeforeAfter1 from "../Assets/resultado_fem2.jpeg";
+import React, { useState, useEffect } from "react";
 import BeforeAfter2 from "../Assets/buitrago_result.jpeg";
 import BeforeAfter3 from "../Assets/resultado_atleta3.jpeg";
 import BeforeAfter4 from "../Assets/resultado_fem.jpeg";
@@ -7,11 +6,6 @@ import BeforeAfter5 from "../Assets/kayo_resultado.jpeg";
 
 const Results = () => {
   const resultsData = [
-    // {
-    //   image: BeforeAfter1,
-    //   name: "@claranogueira.nutri",
-    //   hashtag: "#TeamSaboia",
-    // },
     {
       image: BeforeAfter2,
       name: "@buiserk",
@@ -36,6 +30,15 @@ const Results = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Carrossel automático
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000); // Muda a cada 5 segundos
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   const prevSlide = () => {
     setCurrentIndex(
       currentIndex === 0 ? resultsData.length - 1 : currentIndex - 1
@@ -48,8 +51,14 @@ const Results = () => {
     );
   };
 
+  const handleCtaClick = () => {
+    // Abre WhatsApp com mensagem específica para resultados
+    const message = encodeURIComponent("Olá! Quero ser o próximo resultado de sucesso do Team Saboia!");
+    window.open(`https://wa.me/5561999999999?text=${message}`, '_blank');
+  };
+
   return (
-      <div className="results-section-wrapper">
+    <div className="results-section-wrapper" id="results">
       <div className="results-section-top" style={{ textAlign: 'center' }}>
         <h1 className="primary-heading" style={{ margin: '0 auto' }}>Resultados Reais</h1>
         <p className="primary-text" style={{ margin: '2rem auto' }}>
@@ -90,7 +99,9 @@ const Results = () => {
 
       {/* CTA */}
       <div className="results-cta">
-        <button className="cta-button">QUERO SER O PRÓXIMO</button>
+        <button className="cta-button" onClick={handleCtaClick}>
+          QUERO SER O PRÓXIMO
+        </button>
       </div>
     </div>
   );

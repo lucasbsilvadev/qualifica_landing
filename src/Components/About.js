@@ -1,8 +1,15 @@
 import React from "react";
 import AboutBackgroundImage from "../Assets/lipe_champion.jpg";
-import { BsFillPlayCircleFill } from "react-icons/bs";
 
 const About = () => {
+  const handleMetodologiaClick = () => {
+    // Leva para a seção de consultoria (work)
+    const element = document.getElementById("work");
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="about-section-container" id="about">
       <div className="section-container">
@@ -24,7 +31,7 @@ const About = () => {
               é fruto de dedicação, técnica e paixão pelo esporte.
             </p>
             <div className="about-buttons-container">
-              <button className="secondary-button">
+              <button className="secondary-button" onClick={handleMetodologiaClick}>
                 Conheça a metodologia
               </button>
             </div>
