@@ -54,11 +54,11 @@ const Results = () => {
   const handleCtaClick = () => {
     // Abre WhatsApp com mensagem específica para resultados
     const message = encodeURIComponent("Olá! Quero ser o próximo resultado de sucesso do Team Saboia!");
-    window.open(`https://wa.me/5561999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5561995909917?text=${message}`, '_blank');
   };
 
   return (
-    <div className="results-section-wrapper" id="results">
+    <div className="results-section-wrapper" id="results" data-animate="fade-up" data-delay="200">
       <div className="results-section-top" style={{ textAlign: 'center' }}>
         <h1 className="primary-heading" style={{ margin: '0 auto' }}>Resultados Reais</h1>
         <p className="primary-text" style={{ margin: '2rem auto' }}>

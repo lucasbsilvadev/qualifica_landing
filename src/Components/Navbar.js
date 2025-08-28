@@ -29,7 +29,7 @@ const Navbar = () => {
   const handleCtaClick = () => {
     // Abre WhatsApp com mensagem pré-definida
     const message = encodeURIComponent("Olá! Gostaria de mais informações sobre a consultoria.");
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5561995909917?text=${message}`, '_blank');
   };
 
   const menuOptions = [

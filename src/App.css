@@ -884,7 +884,7 @@ nav {
 }
 
 .legal-links a:hover {
-  color: #fe9e0d;
+  color: #000000;
 }
 
 /* RESPONSIVIDADE */
@@ -1408,7 +1408,7 @@ nav {
 }
 
 .scroll-to-top-button:hover {
-  background: linear-gradient(135deg, #fe9e0d 0%, #e58c00 100%);
+  background: linear-gradient(135deg, #000000 0%, #000000 100%);
   transform: translateY(-3px);
   box-shadow: 0 6px 25px rgba(254, 158, 13, 0.4);
 }
@@ -1506,7 +1506,83 @@ nav {
 }
 
 .achievement-item.completed .achievement-number {
-  color: #fe9e0d;
+  color: #000000;
+}
+
+/* Animações de scroll - Abordagem Centralizada */
+[data-animate] {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+[data-animate].scroll-visible {
+  opacity: 1;
+}
+
+/* Animações específicas */
+[data-animate="fade-up"] {
+  transform: translateY(50px);
+}
+
+[data-animate="fade-up"].scroll-visible {
+  transform: translateY(0);
+}
+
+[data-animate="fade-down"] {
+  transform: translateY(-50px);
+}
+
+[data-animate="fade-down"].scroll-visible {
+  transform: translateY(0);
+}
+
+[data-animate="fade-left"] {
+  transform: translateX(50px);
+}
+
+[data-animate="fade-left"].scroll-visible {
+  transform: translateX(0);
+}
+
+[data-animate="fade-right"] {
+  transform: translateX(-50px);
+}
+
+[data-animate="fade-right"].scroll-visible {
+  transform: translateX(0);
+}
+
+[data-animate="zoom-in"] {
+  transform: scale(0.9);
+}
+
+[data-animate="zoom-in"].scroll-visible {
+  transform: scale(1);
+}
+
+[data-animate="flip"] {
+  transform: perspective(1000px) rotateX(30deg);
+}
+
+[data-animate="flip"].scroll-visible {
+  transform: perspective(1000px) rotateX(0);
+}
+
+/* Delay para animações em sequência */
+[data-delay="100"] { transition-delay: 0.1s; }
+[data-delay="200"] { transition-delay: 0.2s; }
+[data-delay="300"] { transition-delay: 0.3s; }
+[data-delay="400"] { transition-delay: 0.4s; }
+[data-delay="500"] { transition-delay: 0.5s; }
+[data-delay="600"] { transition-delay: 0.6s; }
+[data-delay="700"] { transition-delay: 0.7s; }
+[data-delay="800"] { transition-delay: 0.8s; }
+[data-delay="900"] { transition-delay: 0.9s; }
+[data-delay="1000"] { transition-delay: 1.0s; }
+
+/* Melhorar performance das animações */
+[data-animate] {
+  will-change: transform, opacity;
 }
 
 /* Utilitários */

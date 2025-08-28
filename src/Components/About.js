@@ -11,7 +11,7 @@ const About = () => {
   };
 
   return (
-    <section className="about-section-container" id="about">
+    <section className="about-section-container" id="about" data-animate="fade-up" data-delay="200">
       <div className="section-container">
         <div className="about-section-content">
           <div className="about-section-image-container">

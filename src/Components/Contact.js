@@ -24,7 +24,7 @@ const Contact = () => {
 
   const handleWhatsAppClick = () => {
     const whatsappMessage = generateWhatsAppMessage();
-    window.open(`https://wa.me/5511999999999?text=${whatsappMessage}`, '_blank');
+    window.open(`https://wa.me/5561995909917?text=${whatsappMessage}`, '_blank');
   };
 
   const handleSubmit = (e) => {
@@ -36,7 +36,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-page-wrapper" id="contact">
+    <div className="contact-page-wrapper" id="contact" data-animate="fade-right" data-delay="200">
       <div className="contact-container">
         <div className="contact-header">
           <p className="primary-subheading">Contato</p>
@@ -54,7 +54,7 @@ const Contact = () => {
               </div>
               <div className="info-content">
                 <h3>Telefone</h3>
-                <p>+55 (11) 99999-9999</p>
+                <p>+55 (61) 9 9590-9917</p>
               </div>
             </div>
 
@@ -74,7 +74,7 @@ const Contact = () => {
               </div>
               <div className="info-content">
                 <h3>Localização</h3>
-                <p>São Paulo, Brasil</p>
+                <p>Brasília, Brasil</p>
               </div>
             </div>
 

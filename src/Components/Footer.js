@@ -4,7 +4,7 @@ import { SiWhatsapp } from "react-icons/si";
 
 const Footer = () => {
   return (
-    <footer className="footer-wrapper">
+    <footer className="footer-wrapper" data-animate="fade-right" data-delay="200">
       <div className="footer-content">
         
         {/* Seção Principal */}

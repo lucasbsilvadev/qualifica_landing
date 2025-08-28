@@ -41,7 +41,7 @@ const Work = () => {
   ];
 
   return (
-    <div className="work-section-wrapper" id="work">
+    <div className="work-section-wrapper" id="work" data-animate="fade-up" data-delay="200">
       <div className="work-section-top">
         <p className="primary-subheading">Consultoria</p>
         <h1 className="primary-heading">Como funciona a consultoria</h1>

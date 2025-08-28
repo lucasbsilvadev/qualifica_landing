@@ -24,7 +24,7 @@ const Home = () => {
           return counter;
         })
       );
-    }, 80);
+    }, 200);
 
     return () => clearInterval(interval);
   }, []);
@@ -38,9 +38,9 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container" id="home">
+    <div className="home-container" id="home" data-animate="fade-right" data-delay="200">
       <Navbar />
-      <div className="home-banner-container">
+      <div className="home-banner-container" data-animate="fade-up" data-delay="200">
         <div className="home-text-section">
           <h1 className="primary-heading">
             Junte-se ao time
