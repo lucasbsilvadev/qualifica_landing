@@ -6,6 +6,7 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
+    company: "",
     message: ""
   });
 
@@ -17,14 +18,14 @@ const Contact = () => {
   };
 
   const generateWhatsAppMessage = () => {
-    const { name, email, phone, message } = formData;
-    const text = `Olá! Meu nome é *${name || "Interessado"}* e tenho interesse na consultoria esportiva.${email ? `\n*Email:* ${email}` : ""}${phone ? `\n*Telefone:* ${phone}` : ""}${message ? `\n*Mensagem:* ${message}` : ""}`;
+    const { name, email, phone, company, message } = formData;
+    const text = `Olá! Meu nome é *${name || "Interessado"}* e tenho interesse na consultoria.${email ? `\n*Email:* ${email}` : ""}${phone ? `\n*Telefone:* ${phone}` : ""}${company ? `\n*Empresa/Município:* ${company}` : ""}${message ? `\n*Mensagem:* ${message}` : ""}`;
     return encodeURIComponent(text);
   };
 
   const handleWhatsAppClick = () => {
     const whatsappMessage = generateWhatsAppMessage();
-    window.open(`https://wa.me/5561995909917?text=${whatsappMessage}`, '_blank');
+    window.open(`https://wa.me/5561982217355?text=${whatsappMessage}`, '_blank');
   };
 
   const handleSubmit = (e) => {
@@ -32,7 +33,7 @@ const Contact = () => {
     // Aqui você pode adicionar lógica para enviar o formulário
     console.log("Dados do formulário:", formData);
     alert("Mensagem enviada! Entraremos em contato em breve.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", company: "", message: "" });
   };
 
   return (
@@ -40,73 +41,31 @@ const Contact = () => {
       <div className="contact-container">
         <div className="contact-header">
           <p className="primary-subheading">Contato</p>
-          <h1 className="primary-heading">Pronto para transformar seu físico?</h1>
+          <h1 className="primary-heading">Vamos destravar seu próximo grande contrato?</h1>
           <p className="primary-text">
-            Entre em contato para uma consultoria personalizada e comece sua jornada hoje mesmo.
+            Preencha o formulário abaixo para dar início ao processo
           </p>
         </div>
 
-        <div className="contact-content">
-          <div className="contact-info">
-            <div className="info-item">
-              <div className="info-icon">
-                <FiPhone />
+        <div className="contact-content two-column-layout">
+          <div className="contact-form-column">
+            <form className="contact-form" onSubmit={handleSubmit}>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nome completo"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
               </div>
-              <div className="info-content">
-                <h3>Telefone</h3>
-                <p>+55 (61) 9 9590-9917</p>
-              </div>
-            </div>
 
-            <div className="info-item">
-              <div className="info-icon">
-                <FiMail />
-              </div>
-              <div className="info-content">
-                <h3>Email</h3>
-                <p>contato@teamsaboia.com</p>
-              </div>
-            </div>
-
-            <div className="info-item">
-              <div className="info-icon">
-                <FiMapPin />
-              </div>
-              <div className="info-content">
-                <h3>Localização</h3>
-                <p>Brasília, Brasil</p>
-              </div>
-            </div>
-
-            <div className="whatsapp-direct">
-              <button 
-                className="whatsapp-button"
-                onClick={handleWhatsAppClick}
-              >
-                <FiMessageSquare />
-                Falar diretamente no WhatsApp
-              </button>
-            </div>
-          </div>
-
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <input
-                type="text"
-                name="name"
-                placeholder="Seu nome completo"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-
-            <div className="form-row">
               <div className="form-group">
                 <input
                   type="email"
                   name="email"
-                  placeholder="Seu melhor email"
+                  placeholder="E-mail"
                   value={formData.email}
                   onChange={handleInputChange}
                   required
@@ -117,27 +76,94 @@ const Contact = () => {
                 <input
                   type="tel"
                   name="phone"
-                  placeholder="Seu telefone"
+                  placeholder="Telefone / WhatsApp"
                   value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Empresa / Município"
+                  value={formData.company}
                   onChange={handleInputChange}
                 />
               </div>
-            </div>
 
-            <div className="form-group">
-              <textarea
-                name="message"
-                placeholder="Conte um pouco sobre seus objetivos..."
-                rows="5"
-                value={formData.message}
-                onChange={handleInputChange}
-              ></textarea>
-            </div>
+              <div className="form-group">
+                <textarea
+                  name="message"
+                  placeholder="Mensagem"
+                  rows="5"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                ></textarea>
+              </div>
 
-            <button type="submit" className="secondary-button">
-              Enviar Mensagem
+              <button type="submit" className="secondary-button">
+                Enviar
+              </button>
+            </form>
+          </div>
+
+          <div className="calendar-widget-column">
+            <div className="calendar-container">
+              <h3>Agende uma reunião diretamente</h3>
+              <p>Selecione um horário disponível em nossa agenda para conversarmos:</p>
+              {/* Substitua pelo seu widget Calendly/TidyCal real */}
+              <div className="calendar-placeholder">
+                <div className="calendar-widget">
+                  <p>Widget de Agendamento</p>
+                  <p>Integre com Calendly ou TidyCal</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="contact-info">
+          <div className="info-item">
+            <div className="info-icon">
+              <FiPhone />
+            </div>
+            <div className="info-content">
+              <h3>Telefone</h3>
+              <p>+55 (61) 9 98221-7355</p>
+            </div>
+          </div>
+
+          <div className="info-item">
+            <div className="info-icon">
+              <FiMail />
+            </div>
+            <div className="info-content">
+              <h3>Email</h3>
+              <p>contato@qualifica.com</p>
+            </div>
+          </div>
+
+          <div className="info-item">
+            <div className="info-icon">
+              <FiMapPin />
+            </div>
+            <div className="info-content">
+              <h3>Localização</h3>
+              <p>Brasília, Brasil</p>
+            </div>
+          </div>
+
+          <div className="whatsapp-direct">
+            <button 
+              className="whatsapp-button"
+              onClick={handleWhatsAppClick}
+            >
+              <FiMessageSquare />
+              Falar diretamente no WhatsApp
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>

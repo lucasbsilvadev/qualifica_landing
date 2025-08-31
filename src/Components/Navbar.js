@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../Assets/logo_lipe.png";
+import Logo from "../Assets/logo.png";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -14,6 +14,8 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import WorkIcon from "@mui/icons-material/Work";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -21,35 +23,46 @@ const Navbar = () => {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Adiciona um pequeno delay para garantir que o DOM esteja completamente renderizado
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
     setOpenMenu(false);
   };
 
   const handleCtaClick = () => {
     // Abre WhatsApp com mensagem pré-definida
-    const message = encodeURIComponent("Olá! Gostaria de mais informações sobre a consultoria.");
-    window.open(`https://wa.me/5561995909917?text=${message}`, '_blank');
+    const message = encodeURIComponent("Olá! Gostaria de mais informações sobre os serviços de licitações.");
+    window.open(`https://wa.me/5561982217355?text=${message}`, '_blank');
+    setOpenMenu(false);
   };
 
   const menuOptions = [
     { text: "Home", icon: <HomeIcon />, action: () => scrollToSection("home") },
+    { text: "Soluções", icon: <WorkIcon />, action: () => scrollToSection("solutions") },
+    { text: "Serviços", icon: <FitnessCenterIcon />, action: () => scrollToSection("services") },
     { text: "Sobre", icon: <InfoIcon />, action: () => scrollToSection("about") },
-    { text: "Consultoria", icon: <FitnessCenterIcon />, action: () => scrollToSection("work") },
-    { text: "Resultados", icon: <CommentRoundedIcon />, action: () => scrollToSection("results") },
+    { text: "Resultados", icon: <EmojiEventsIcon />, action: () => scrollToSection("results") },
     { text: "Contato", icon: <PhoneRoundedIcon />, action: () => scrollToSection("contact") },
   ];
 
   return (
-    <nav>
+    <nav className="navbar">
       <div className="nav-logo-container">
-        <img src={Logo} alt="Logo Team Saboia" onClick={() => scrollToSection("home")} style={{cursor: 'pointer'}} />
+        <img 
+          src={Logo} 
+          alt="Logo Qualifica Licitações" 
+          onClick={() => scrollToSection("home")} 
+          style={{cursor: 'pointer'}} 
+        />
       </div>
       <div className="navbar-links-container">
         <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("home"); }}>Home</a>
+        <a href="#solutions" onClick={(e) => { e.preventDefault(); scrollToSection("solutions"); }}>Soluções</a>
+        <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection("services"); }}>Serviços</a>
         <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection("about"); }}>Sobre</a>
-        <a href="#work" onClick={(e) => { e.preventDefault(); scrollToSection("work"); }}>Consultoria</a>
-        <a href="#results" onClick={(e) => { e.preventDefault(); scrollToSection("testimonials"); }}>Resultados</a>
+        <a href="#results" onClick={(e) => { e.preventDefault(); scrollToSection("results"); }}>Resultados</a>
         <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection("contact"); }}>Contato</a>
         <button className="primary-button" onClick={handleCtaClick}>Quero começar!</button>
       </div>
@@ -71,7 +84,7 @@ const Navbar = () => {
           <Divider />
           <List>
             <ListItem disablePadding>
-              <ListItemButton onClick={handleCtaClick}>
+              <ListItemButton onClick={handleCtaClick} className="cta-menu-item">
                 <ListItemIcon>
                   <PhoneRoundedIcon />
                 </ListItemIcon>

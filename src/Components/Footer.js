@@ -10,10 +10,10 @@ const Footer = () => {
         {/* Seção Principal */}
         <div className="footer-main">
           <div className="footer-brand">
-            <h3 className="footer-logo">WOLF GANG</h3>
-            <p className="footer-tagline">#TeamSaboia</p>
+            <h3 className="footer-logo">QUALIFICA LICITAÇÕES</h3>
+            <p className="footer-tagline">Wesley Brito</p>
             <p className="footer-description">
-              Transformação física através de metodologia científica e acompanhamento personalizado.
+              Auxiliando empresas em processos de licitação com propósito e clareza.
             </p>
           </div>
 
@@ -21,11 +21,11 @@ const Footer = () => {
             <h4>Contato</h4>
             <div className="contact-item">
               <FiPhone />
-              <span>+55 (61) 99590-9917</span>
+              <span>+55 (61) 9 8221-7355</span>
             </div>
             <div className="contact-item">
               <FiMail />
-              <span>contato@teamsaboia.com</span>
+              <span>contato@qualifica.com</span>
             </div>
             <div className="contact-item">
               <FiMapPin />
@@ -37,7 +37,7 @@ const Footer = () => {
             <h4>Siga nas Redes</h4>
             <div className="social-icons">
               <a 
-                href="https://instagram.com/luissaboia.ofc " 
+                href="https://instagram.com/qualificalicitacoes" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -46,7 +46,7 @@ const Footer = () => {
                 <span>Instagram</span>
               </a>
               <a 
-                href="https://wa.me/55619995909917" 
+                href="https://wa.me/5561982217355" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -59,34 +59,18 @@ const Footer = () => {
         </div>
 
         {/* Seção de Patrocinadores */}
-        <div className="footer-sponsors">
-          <h4>Parceiros Oficiais</h4>
-          <div className="sponsors-grid">
-            <div className="sponsor-item">
-              <div className="sponsor-logo bulking">BULKING</div>
-              <p>Use cupom: <strong>SABOIA</strong></p>
-              <span>Suplementos de qualidade</span>
-            </div>
-            
-            <div className="sponsor-item">
-              <div className="sponsor-logo php">PHP NUTRITION</div>
-              <p>Suplementos premium</p>
-              <span>Alta performance</span>
-            </div>
-          </div>
-        </div>
-
+      
         {/* Footer Bottom */}
         <div className="footer-bottom">
           <div className="footer-legal">
-            <span>© 2024 Team Saboia. Todos os direitos reservados.</span>
+            <span>© 2025 Qualifica. Todos os direitos reservados.</span>
             <div className="legal-links">
               <a href="#privacy">Política de Privacidade</a>
               <a href="#terms">Termos de Uso</a>
+              <span>© CraftingBytez.</span>
             </div>
           </div>
         </div>
-
       </div>
     </footer>
   );

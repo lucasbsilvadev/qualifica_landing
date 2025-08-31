@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import BannerImage from "../Assets/lipe-hero.jpeg";
+ import BannerImage from "../Assets/img_example.png"; 
 import Navbar from "./Navbar";
 import { FiArrowRight } from "react-icons/fi";
 
 const Home = () => {
   const [counters, setCounters] = useState([
-    { id: 1, value: 0, target: 10, text: "pódios como treinador", prefix: "+", suffix: "" },
-    { id: 2, value: 0, target: 3, text: "atletas no TOP 1", prefix: "+", suffix: "" },
-    { id: 3, value: 0, target: 3, text: "Top 1 Men's Physique", prefix: "", suffix: "x" }
+    { id: 1, value: 0, target: 150, text: "contratos fechados", prefix: "+", suffix: "" },
+    { id: 2, value: 0, target: 40, text: "municípios atendidos", prefix: "+", suffix: "" },
+    { id: 3, value: 0, target: 12, text: "anos de experiência", prefix: "", suffix: "" }
   ]);
 
   useEffect(() => {
@@ -24,14 +24,14 @@ const Home = () => {
           return counter;
         })
       );
-    }, 200);
+    }, 80);
 
     return () => clearInterval(interval);
   }, []);
 
-  const handleSaibaMaisClick = () => {
-    // Leva para a seção de consultoria
-    const element = document.getElementById("work");
+  const handleFaleEspecialistaClick = () => {
+    // Leva para a seção de contato
+    const element = document.getElementById("contact");
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -43,18 +43,17 @@ const Home = () => {
       <div className="home-banner-container" data-animate="fade-up" data-delay="200">
         <div className="home-text-section">
           <h1 className="primary-heading">
-            Junte-se ao time
-            e transforme seu físico
+            Transformamos Burocracia em Contratos Lucrativos
           </h1>
           <p className="primary-text">
-            Consultoria esportiva de alto nível com Luís Sabóia, atleta e
-            treinador com acompanhamento que vai do iniciante ao fisiculturista.
+            Assessoria completa para empresas que buscam vender para o governo e para municípios 
+            que precisam otimizar seus processos de contratação, com base na Nova Lei de Licitações (Lei 14.133/21).
           </p>
-          <button className="secondary-button" onClick={handleSaibaMaisClick}>
-            Saiba mais <FiArrowRight />
+          <button className="secondary-button" onClick={handleFaleEspecialistaClick}>
+            Fale com um Especialista <FiArrowRight />
           </button>
 
-          {/* Seção de Indicadores */}
+          {/* Seção de Indicadores - mantida a mesma estrutura, apenas conteúdo alterado */}
           <div className="achievements-section">
             <div className="achievements-grid">
               {counters.map(counter => (
@@ -71,7 +70,7 @@ const Home = () => {
           </div>
         </div>
         <div className="home-image-section">
-          <img className="hero-image" src={BannerImage} alt="Luís Felipe Sabóia" />
+          <img className="hero-image" src={BannerImage} alt="Especialista em Licitações Públicas" />
         </div>
       </div>
     </div>

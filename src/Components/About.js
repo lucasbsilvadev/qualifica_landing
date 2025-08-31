@@ -1,39 +1,40 @@
 import React from "react";
-import AboutBackgroundImage from "../Assets/lipe_champion.jpg";
+import AboutBackgroundImage from "../Assets/img_example.png";
 
 const About = () => {
-  const handleMetodologiaClick = () => {
-    // Leva para a seção de consultoria (work)
-    const element = document.getElementById("work");
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const handleMetodologiaClick = () => {
+  //   // Leva para a seção de metodologia (work)
+  //   const element = document.getElementById("work");
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   return (
     <section className="about-section-container" id="about" data-animate="fade-up" data-delay="200">
       <div className="section-container">
         <div className="about-section-content">
           <div className="about-section-image-container">
-            <img src={AboutBackgroundImage} alt="Luís Felipe Sabóia - Atleta Wolfgang" />
+            <img src={AboutBackgroundImage} alt="Especialista em Licitações Públicas" />
           </div>
           <div className="about-section-text-container">
-            <p className="primary-subheading">Sobre</p>
+            <p className="primary-subheading">Sobre Nós</p>
             <h1 className="primary-heading">
-              Transformação além do físico
+              Expertise que gera resultados concretos
             </h1>
             <p className="primary-text">
-              Com metodologia científica e acompanhamento personalizado, Luís Sabóia desenvolve 
-              atletas completos - fortes mentalmente e esteticamente evoluídos.
+              Com mais de 10 anos de experiência no setor público e privado, nossa consultoria já gerou
+              mais de R$ 330 milhões em contratos para empresas de diversos segmentos.
             </p>
             <p className="primary-text">
-              Do iniciante ao atleta de alto rendimento, cada jornada é única e cada resultado 
-              é fruto de dedicação, técnica e paixão pelo esporte.
+              Especialista na Nova Lei de Licitações (Lei 14.133/21), atuamos tanto no assessoramento 
+              de empresas que desejam vender para o governo quanto para municípios que precisam 
+              modernizar seus processos licitatórios.
             </p>
             <div className="about-buttons-container">
-              <button className="secondary-button" onClick={handleMetodologiaClick}>
-                Conheça a metodologia
-              </button>
+              {/* <button className="secondary-button" onClick={handleMetodologiaClick}>
+                Conheça nossa metodologia
+              </button> */}
             </div>
           </div>
         </div>
